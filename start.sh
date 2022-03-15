@@ -20,7 +20,7 @@ tput setaf 2
 #
 # Note: Numbers are 1024-byte units on Linux,
 #
-reqSpace=340438600
+reqSpace=630000000
 availSpace=$(df "$HOME" | awk 'NR==2 { print $4 }')
 if (( availSpace < reqSpace )); then
   echo " - You dont have recomanded Disk space for this! Do you want to continue (press ctrl+c cancel / enter to continue) ?" >&2
