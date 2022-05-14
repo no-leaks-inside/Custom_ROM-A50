@@ -29,7 +29,7 @@ fi
 echo " - Ok. I will download requirements"
 
 sudo apt update; sudo apt upgrade; sudo apt install openssh-server screen python git openjdk-8-jdk android-tools-adb bc bison \
-build-essential curl flex g++-multilib gcc-multilib gnupg gperf imagemagick lib32ncurses-dev \
+build-essential curl flex g++-multilib gcc-multilib gnupg gperf lib32ncurses-dev \
 lib32readline-dev lib32z1-dev  liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev \
 libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc yasm zip zlib1g-dev \
 libtinfo5 libncurses5 ccache
@@ -48,18 +48,3 @@ ccache -o compression=true
 git config --global user.email "$e"
 git config --global user.name "$n"
 
-
-echo " - What Lineage version to sync ?"
-echo " - Copy version number from https://github.com/LineageOS/android/branches !"
-
-read v
-repo init -u https://github.com/LineageOS/android.git -b lineage-$v
-
-echo " - Sync has started !"
-
-repo sync
-
-echo " - What is the device you want to build for ?"
-read d
-
-echo " - Now bash the device you want to build to download trees and other things (bash a505f.sh / bash a505fn.sh)!"
